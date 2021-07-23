@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administratory</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style2.css">
+
+</head>
+
+<body>
+    <div class="container p-3">
+        <h1 class="text-center pb-3 text-bold">Администраторы</h1>
+        <div class="row">
+            <div class="col-sm-12">
+                <button id="add-btn" class="btn btn-info btn-lg float-end" data-bs-toggle="modal"
+                    data-bs-target="#add-modal">Добавить</button>
+            </div>
+        </div>
+
+        <table class="table table-success mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ФИО администратора</th>
+                    <th scope="col">Номер телефона</th>
+                    <th scope="col">Пин код</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="body-table">
+
+            </tbody>
+        </table>
+        <!-- Dobavit admina -->
+        <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Администраторы</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="add-form" action="javascript:void(0)">
+                            <div class="textCard4">Личные данные</div>
+                            <div class="row rowCard4">
+                                <div class="col">
+                                    <label for="surnameAdmin" class="text14px">ФИО</label>
+                                    <input type="text" class="form-control inputHeight"
+                                        placeholder="Иванов Иван Иванович" aria-label="First name" id="name">
+                                </div>
+                            </div>
+                            <div class="row rowCard4">
+                                <div class="col">
+                                    <label for="telNumberAdmin" class="text14px">Номер телефона </label>
+                                    <input type="tel" class="form-control inputHeight" id="phone"
+                                        placeholder="0701222222 " aria-label="Last name">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="save-btn" class="btn btn-dark btn-lg mx-auto"
+                                    data-bs-dismiss="modal">Добавить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redaktirovat admina -->
+    <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Изменить данные администратора</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-form" action="javascript:void(0)">
+                        <div class="textCard4">Личные данные</div>
+                        <div class="row rowCard4">
+                            <div class="col">
+                                <label for="edit-name" class="text14px">ФИО</label>
+                                <input type="text" class="form-control inputHeight" placeholder="Иванов Иван Иванович"
+                                    aria-label="First name" id="edit-name" name="name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="edit-pin" class="text14px">Пин код</label>
+                                <input type="text" class="form-control inputHeight" id="edit-pin" name="pin"
+                                    placeholder="" aria-label="Last name">
+                            </div>
+                            <div class="col">
+                                <label for="edit-phone" class="text14px">Номер телефона </label>
+                                <input type="tel" class="form-control inputHeight" id="edit-phone" name="phone"
+                                    placeholder=" " aria-label="Last name">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="edit-btn" class="btn btn-dark btn-lg"
+                                data-bs-dismiss="modal">Добавить изменения</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <script src="js/admin-panel.js"></script>
+</body>
+
+</html>

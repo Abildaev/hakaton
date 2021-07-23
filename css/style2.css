@@ -1,0 +1,33 @@
+
+body{
+	background-color:#8080801f !important;
+	
+}
+
+.text-bold{
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.text14px{
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.textCard4{
+font-family: 'Open sans', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 18px;
+margin-top: 24px;
+margin-bottom: 16px;
+}
+
+.rowCard4{
+	margin-top: 24px !important;
+}
+
+

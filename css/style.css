@@ -1,0 +1,38 @@
+
+body{
+	background-color: black !important;
+	
+}
+
+.containermain{
+	width: 100%;
+	height:  100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card{
+	max-width: 640px !important;
+	width: 100%;
+	background: #FFFFFF;
+	border: 1px solid black;
+	border-radius: 4px;
+	font-family: 'Open Sans', sans-serif;
+	padding:  23px 16px 48px 16px;
+
+} 
+
+.btnDiv{
+	display: flex;
+	justify-content: center;
+    text-decoration: none;
+}
+
+.btnCard{
+	width:  352px;
+	height: 48px;
+	margin-top: 16px;
+	
+}
+

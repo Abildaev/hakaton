@@ -1,0 +1,41 @@
+@media screen and (min-width: 767.98px) {
+
+
+  .gray__body {
+    background-color: #000000;
+  }
+
+  .form__container {
+    max-width: 640px;
+  }
+
+  .black__body {
+    background-color: #000;
+  }
+
+
+  .form__title {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .form__input {
+    margin-bottom: 16px;
+  }
+
+  .form__btn {
+    font-size: 18px;
+  }
+
+  .form__inputs-title {
+    text-align: left;
+  }
+
+ .form__input-btn {
+   display: none;
+ }
+
+
+
+  
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursy</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style2.css">
+
+</head>
+
+<body>
+    <div class="container p-3">
+        <h1 class="text-center pb-3 text-bold">Курсы</h1>
+        <div class="row">
+            <div class="col-sm-12">
+                <button id="add-btn" class="btn btn-info btn-lg float-end text-bold" data-bs-toggle="modal"
+                    data-bs-target="#add-modal">Добавить</button>
+            </div>
+        </div>
+
+        <table class="table table-success mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Курс</th>
+                    <th scope="col">ФИО Ментора</th>
+                    <th scope="col">ФИО Ассистента</th>
+                    <th scope="col">Дата начало</th>
+                    <th scope="col">Дата окончания</th>
+                    <th scope="col">Стоимость</th>
+                    <th scope="col">Аудитория </th>
+                    <th scope="col">Время занятий </th>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+
+                </tr>
+            </thead>
+            <tbody id="body-table">
+
+            </tbody>
+        </table>
+
+        <!-- Dobavit course -->
+        <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Добавьте новые курсы</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="add-form" action="javascript:void(0)">
+                            <div class="textCard4">Курсы</div>
+                            <div class="row">
+                                <div class="col">
+
+                                    <input type="text" class="form-control inputHeight" placeholder="Наименование курса"
+                                        aria-label="First name" id="name">
+                                </div>
+                            </div>
+                            <div class="textCard4">Сведения </div>
+                            <div class="row rowCard4">
+                                <div class="col">
+
+                                    <input type="text" class="form-control inputHeight" placeholder="ФИО Ментора"
+                                        id="mentor">
+                                </div>
+                            </div>
+                            <div class="row rowCard4">
+                                <div class="col">
+
+                                    <input type="text" class="form-control inputHeight" placeholder="ФИО Ассистента"
+                                        id="assistant">
+                                </div>
+                            </div>
+                            <div class="row rowCard4">
+                                <div class="col">
+
+                                    <input type="date" class="form-control inputHeight" placeholder="Дата начало"
+                                        id="start_date">
+                                </div>
+                                <div class="col">
+                                    <input type="date" class="form-control inputHeight" placeholder="Дата окончания"
+                                        id="end_date">
+                                </div>
+                                <div class="col">
+                                    <input type="number" class="form-control inputHeight" placeholder="Стоимость"
+                                        id="price">
+                                </div>
+                            </div>
+                            <div class="row rowCard4">
+                                <div class="col">
+                                    <label for="class_room" class="textCard4">Аудитория </label>
+                                    <select id="class_room" class="form-select">
+                                        <option value="205">205</option>
+                                        <option value="205">206</option>
+                                        <option value="207">207</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="time" class="textCard4">Время занятий </label>
+                                    <select id="time" class="form-select">
+                                        <option value="12:00">12:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="save-btn" class="btn btn-dark btn-lg mx-auto"
+                            data-bs-dismiss="modal">Добавить</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Redaktirovat course -->
+
+    <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Изменить курсы</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-form" action="javascript:void(0)">
+                        <div class="textCard4">Курсы</div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control inputHeight" placeholder="Наименование курса"
+                                    aria-label="First name" id="edit-nameCourse" name="name">
+                            </div>
+                        </div>
+                        <div class="textCard4">Сведения </div>
+                        <div class="row rowCard4">
+                            <div class="col">
+                                <input type="text" class="form-control inputHeight" placeholder="ФИО Ментора"
+                                    id="edit-nameMentor" name="mentor">
+                            </div>
+                        </div>
+                        <div class="row rowCard4">
+                            <div class="col">
+                                <input type="text" class="form-control inputHeight" placeholder="ФИО Ассистента"
+                                    id="edit-nameAssisstant" name="assistant">
+                            </div>
+                        </div>
+                        <div class="row rowCard4">
+                            <div class="col">
+
+                                <input type="date" class="form-control inputHeight" placeholder="Дата начало"
+                                    id="edit-dateStart" name="start_date">
+                            </div>
+                            <div class="col">
+
+                                <input type="date" class="form-control inputHeight" placeholder="Дата окончания"
+                                    id="edit-dateEnd" name="end_date">
+                            </div>
+                            <div class="col">
+
+                                <input type="number" class="form-control inputHeight" placeholder="Стоимость"
+                                    id="edit-priceCourse" name="price">
+                            </div>
+
+                        </div>
+                        <div class="row rowCard4">
+                            <div class="col">
+                                <label for="edit-class_room" class="text14px">Аудитория </label>
+                                <select id="edit-class_room" name="class_room" class="form-select">
+                                    <option value="205">205</option>
+                                    <option value="206">206</option>
+                                    <option value="207">207</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="edit-time" class="text14px">Время занятий </label>
+                                <select id="edit-time" name="time" class="form-select">
+                                    <option value="12:00">12:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                </select>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="edit-btn" class="btn btn-dark btn-lg mx-auto"
+                        data-bs-dismiss="modal">Добавить</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <script src="js/kurs-panel.js"></script>
+</body>
+
+</html>

@@ -268,7 +268,7 @@ button {
 
 .img__wrapper {
   width: 100%;
-  max-height: 250px;
+  max-height: 180px;
   overflow: hidden;
   background-color: #ccc;
   display: flex;

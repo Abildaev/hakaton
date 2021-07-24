@@ -71,7 +71,7 @@ editBtn.onclick = function () {
 
 	elements.forEach((elem) => {
 		data[elem.name] = elem.value;
-	})
+	});
 
 	let options = {
 		method: "PUT",
@@ -141,7 +141,8 @@ let deleteStudent = () => {
 	id = event.target.dataset.id;
 	name = event.target.dataset.name;
 	lastName = event.target.dataset.lastname;
-	course = event.target.dataset.course;
+	courseId = event.target.dataset.courseid;
+	courseName = event.target.dataset.coursename;
 	phone = event.target.dataset.phone;
 	pin = event.target.dataset.pin;
 
@@ -149,12 +150,13 @@ let deleteStudent = () => {
 	let data = {
 		name: name,
 		last_name: lastName,
-		course: course,
+		course: courseId,
 		phone: phone,
 		pin: pin,
 		active: false
-
 	};
+
+
 
 	let options = {
 		method: "PUT",
@@ -187,10 +189,10 @@ let showStudent = (data) => {
 	            <td>${item.id}</td>
 				<td>${item.last_name}</td>
 				<td>${item.name}</td>
-				<td>${item.course}</td>
+				<td>${item.course.name}</td>
 				<td>${item.phone}</td>
 				<td>${item.pin}</td>
-				<td><button data-id='${item.id}' data-name='${item.name}' data-lastname='${item.last_name}' data-course='${item.course}'
+				<td><button data-id='${item.id}' data-name='${item.name}' data-lastname='${item.last_name}' data-courseId='${item.course.id}' data-courseName = '${item.course.name}'
 				data-phone='${item.phone}' data-pin='${item.pin}' class='btn btn-danger delete-btn'>Удалить</button></td>
 				<td><button class='btn btn-light edit-btn ' data-id='${item.id}' data-bs-toggle="modal" data-bs-target="#edit-modal" >Редактировать</button></td>
 			</tr>		

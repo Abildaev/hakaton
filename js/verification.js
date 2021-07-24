@@ -21,17 +21,15 @@ let postUserData = () => {
   let pinElem = document.querySelectorAll('#form__verification-numbers .form__verification-number');
   let pin = "";
 
-  let data = {
-    name: "datan"
-  }
-
-
   if(userPhoneElem.value) {
     user[userPhoneElem.name] = userPhoneElem.value;
     pinElem.forEach(one => {
       pin += one.value;
     });
-    user["userPin"] = pin;
+    user["pin"] = pin;
+
+
+    console.log(user);
 
     let option = {
       method: 'POST',
@@ -41,12 +39,12 @@ let postUserData = () => {
       body: JSON.stringify(user)
     };
 
-    fetch('http://0919a6c89c4a.ngrok.io/api/v1/authentication/', option)
+    fetch('https://easyitselfcheck.herokuapp.com/api/v1/user/auth', option)
     .then(response => response.json())
     .then(data => 
       {
-        if(data.message == true) {
-          window.location.href = "http://127.0.0.1:5503/buffets.html";
+        if(data.success == true) {
+          window.location.href = "https://abildaev.github.io/hakaton/indexmain.html";
         }else {
           console.log(data);
         }
@@ -56,8 +54,6 @@ let postUserData = () => {
   }else {
     alert('заполните все поля');
   }
- 
-
 };
 
 loginBtn.addEventListener('click', postUserData);
